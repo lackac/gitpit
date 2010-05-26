@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676364
 Feature: Story overview
   In order to easily track the progress of a story
   As a visitor

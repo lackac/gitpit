@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676361
 Feature: Import stories from GitHub
   In order to easily add stories from existing Cucumber features
   As a user

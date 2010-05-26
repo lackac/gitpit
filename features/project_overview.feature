@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676363
 Feature: Project overview
   In order to see an overview of the project
   As a visitor

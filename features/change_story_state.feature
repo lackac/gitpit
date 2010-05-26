@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676360
 Feature: Change story state
   In order to update progress of a project without leaving GitPit
   As a user

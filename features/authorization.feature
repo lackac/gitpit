@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676358
 Feature: Authorization
   In order to access private projects
   As a user

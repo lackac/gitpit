@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/new
+@http://www.pivotaltracker.com/story/show/3676350
 Feature: Add project
   In order to track a project on GitPit
   As a visitor
