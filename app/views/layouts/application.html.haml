@@ -16,6 +16,7 @@
         %ul
           %li= link_to "Home", "/"
       %section#content
+        = flash_messages
         = yield
       %aside
         = yield :aside

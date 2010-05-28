@@ -1,4 +1,9 @@
 module ApplicationHelper
+  def flash_messages
+    unless flash.empty?
+      render :partial => "shared/flashes"
+    end
+  end
 
   def google_ajax_cdn(lib = "jquery-1.4")
     if Rails.env.production?

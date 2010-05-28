@@ -1,7 +1,8 @@
 Gitpit::Application.routes.draw do |map|
   root :to => 'home#index'
-
   get "home/index"
+
+  match "login", :to => "session#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
