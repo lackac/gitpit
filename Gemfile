@@ -7,6 +7,7 @@ gem 'mysql'
 
 # Generators
 gem 'rails3-generators'
+gem 'warden'
 
 # Application specific
 gem 'pivotal-tracker', '0.1.3'

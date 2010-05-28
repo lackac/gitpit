@@ -1,7 +1,7 @@
 class SessionController < ApplicationController
 
   def create
-    if PivotalTracker::Client.token(params[:username], params[:password])
+    if warden.authenticate!
       store_user_handle(params[:username])
       redirect_to root_path, :notice => "You are now logged in."
     end
