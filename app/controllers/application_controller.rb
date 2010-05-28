@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   layout 'application'
 
+  before_filter :authenticate_with_warden
+
   def authenticate_with_warden
     warden.authenticate!
   end
@@ -11,5 +13,6 @@ class ApplicationController < ActionController::Base
     def warden
       env['warden']
     end
+    helper_method :warden
 
 end

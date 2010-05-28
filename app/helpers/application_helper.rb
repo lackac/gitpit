@@ -22,6 +22,10 @@ module ApplicationHelper
     "Welcome, #{user_handle || 'guest'}"
   end
 
+  def logged_in?
+    session.has_key?("warden.user.default.key")
+  end
+
   private
     def user_handle
       session[:user_handle]

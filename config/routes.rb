@@ -3,6 +3,7 @@ Gitpit::Application.routes.draw do |map|
   get "home/index"
 
   match "/login" => "session#new"
+  match "/logout" => "session#destroy"
   match "/session" => "session#create", :via => "post"
 
   # The priority is based upon order of creation:

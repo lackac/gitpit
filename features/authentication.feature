@@ -14,7 +14,7 @@ Feature: Authentication
     And I should see "Welcome, veronica"
 
   Scenario: Failed login
-    Given there is a PT account with username: "veronica", password: "secret"
+    Given there is no PT account with username: "veronica", password: "bogus"
     When I go to the login page
     And I fill in "Username" with "veronica"
     And I fill in "Password" with "bogus"
@@ -24,6 +24,7 @@ Feature: Authentication
 
   Scenario: Logout
     Given I am logged in as "veronica"
-    When I follow "Logout"
-    Then I should see "GitHub + Pivotal Tracker = Pit of Success"
+    And I follow "Logout"
+    Then I should see "Log in"
+    And I should see "GitHub + Pivotal Tracker = Pit of Success"
 

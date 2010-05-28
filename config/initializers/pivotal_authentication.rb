@@ -21,18 +21,21 @@ Rails.configuration.middleware.use GitPit::Authentication do |manager|
   Warden::Strategies.add(:pivotal) do
 
     def valid?
-      request.params["username"] && request.params["password"]
+      ( request.params["username"] && request.params["password"] ) ||
+        session.has_key?("warden.user.default.key")
     end
 
     def authenticate!
-      begin
-        token = PivotalTracker::Client.token(params["username"], params["password"])
-      rescue
-        fail!("Could not login.")
+      if token_in_session = session["warden.user.default.key"]
+        PivotalTracker::Client.token = token_in_session
+      else
+        begin
+          token = PivotalTracker::Client.token(params["username"], params["password"])
+        rescue
+          fail!("Could not login.")
+        end
       end
-
       success!(token) if token
-
     end
 
   end
