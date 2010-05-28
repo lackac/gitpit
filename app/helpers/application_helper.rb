@@ -13,4 +13,17 @@ module ApplicationHelper
       lib
     end
   end
+
+  def user_panel
+    render :partial => "shared/user_panel"
+  end
+
+  def user_greeting
+    "Welcome, #{user_handle || 'guest'}"
+  end
+
+  private
+    def user_handle
+      session[:user_handle]
+    end
 end

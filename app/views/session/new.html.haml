@@ -1,5 +1,5 @@
 %h1 Log in
-= form_tag login_path do
+= form_tag session_path do
   %div
     %div= label_tag :username, "Username"
     %div= text_field_tag "username", params[:username]

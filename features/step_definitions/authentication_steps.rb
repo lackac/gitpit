@@ -1,4 +1,4 @@
-Given /^there is a PT account with name: "([^\"]*)", password: "([^\"]*)"$/ do |username, password|
+Given /^there is a PT account with username: "([^\"]*)", password: "([^\"]*)"$/ do |username, password|
   PivotalTracker::Client.should_receive(:token).with(username, password).and_return("abcdef")
 end
 
