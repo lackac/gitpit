@@ -1,0 +1,25 @@
+#flash > div {
+  padding: 0 0.25em;
+  line-height: 2em;
+  border: solid 1px;
+}
+
+#flash {
+  .notice, .success {
+    color:        $success-color;
+    background:   $success-bg-color;
+    border-color: $success-border-color;
+  }
+
+  .warning {
+    color:        $warning-color;
+    background:   $warning-bg-color;
+    border-color: $warning-border-color;
+  }
+
+  .error, .alert {
+    color:        $error-color;
+    background:   $error-bg-color;
+    border-color: $error-border-color;
+  }
+}

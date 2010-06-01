@@ -1,3 +1,16 @@
+# Rails
+.bundle
+db/*.sqlite3
+log/*.log
+log/*.pid
+tmp/**/*
+config/database.yml
+
 # Generated
-coverage
 doc
+coverage
+autotest_result.html
+public/stylesheets/*.css
+
+# Uploaded resources
+public/system

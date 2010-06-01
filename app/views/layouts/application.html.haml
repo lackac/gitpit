@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %title GitPit
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    = javascript_include_tag google_ajax_cdn("jquery-1.4"), "rails", "application"
+    = csrf_meta_tag
+  %body
+    .container
+      %header
+        %h1= link_to "GitPit", "/"
+        = user_panel
+      %nav
+        %ul
+          %li= link_to "Home", "/"
+      %section#content
+        = flash_messages
+        = yield
+      %aside
+        = yield :aside
+      %footer Copyright &copy; 2010, GitPit
