@@ -32,7 +32,7 @@ module GitPit
 
     def redirect
       flash[:alert] = unauthenticated_message unless flash[:notice]
-      redirect_to "/login"
+      redirect_to '/'
     end
 
   protected

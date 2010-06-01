@@ -6,16 +6,17 @@ Feature: Authentication
 
   Scenario: Log in through a form with a PT account
     Given there is a PT account with username: "veronica", password: "secret"
-    When I go to the login page
+    When I go to the home page
     And I fill in "Username" with "veronica"
     And I fill in "Password" with "secret"
     And I press "Login"
     Then I should see a confirmation message
     And I should see "Welcome, veronica"
+    But I should not see "Log in"
 
   Scenario: Failed login
     Given there is no PT account with username: "veronica", password: "bogus"
-    When I go to the login page
+    When I go to the home page
     And I fill in "Username" with "veronica"
     And I fill in "Password" with "bogus"
     And I press "Login"

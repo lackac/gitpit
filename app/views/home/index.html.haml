@@ -1,1 +1,18 @@
-%h1 Home
+%h2 GitHub + Pivotal Tracker = Pit of Success
+
+- unless logged_in?
+  = form_tag session_path do
+    %fieldset
+      %legend Log in
+      %div
+        %div= label_tag :username, "Username"
+        %div= text_field_tag "username", params[:username]
+      %div
+        %div= label_tag :password, "Password"
+        %div= password_field_tag "password", params[:password]
+      %div
+        %div= label_tag :remember_me, "Remember me"
+        %div= check_box_tag "remember_me", "1", params[:remember_me]
+      %div
+        %div= submit_tag "Login"
+

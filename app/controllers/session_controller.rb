@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
 
-  skip_before_filter :authenticate_with_warden, :only => [:new, :create]
+  skip_before_filter :authenticate_with_warden, :only => [:create]
 
   def create
     if warden.authenticate!
@@ -12,7 +12,7 @@ class SessionController < ApplicationController
   def destroy
     warden.logout
     PivotalTracker::Client.token = nil
-    redirect_to login_path, :notice => "You have been logged out."
+    redirect_to root_path, :notice => "You have been logged out."
   end
 
   private
