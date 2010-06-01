@@ -1,22 +1,11 @@
 require 'gitpit_authentication'
 
-Rails.configuration.middleware.use GitPit::Authentication do |manager|
+Rails.configuration.middleware.use Warden::Manager do |manager|
 
+  # sets up a warden strategy for PT
+  # see http://wiki.github.com/hassox/warden/setup
   manager.default_strategies :pivotal
   manager.failure_app = GitPit::FailureApp
-
-  class Warden::SessionSerializer
-
-    # def serialize(record)
-    #   [record.class, record.id]
-    # end
-    #
-    # def deserialize(keys)
-    #   klass, id = keys
-    #   klass.find(:first, :conditions => { :id => id })
-    # end
-
-  end
 
   Warden::Strategies.add(:pivotal) do
 
@@ -27,9 +16,11 @@ Rails.configuration.middleware.use GitPit::Authentication do |manager|
 
     def authenticate!
       if token_in_session = session["warden.user.default.key"]
+        # sets token to be used in PT API calls from session
         PivotalTracker::Client.token = token_in_session
       else
         begin
+          # requests token to be used in PT API calls
           token = PivotalTracker::Client.token(params["username"], params["password"])
         rescue
           fail!("Could not login.")
