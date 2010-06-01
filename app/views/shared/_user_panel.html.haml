@@ -1,3 +1,3 @@
 #user-panel
-  = user_greeting
-  = link_to "Logout", logout_path if logged_in?
+  %div= user_greeting
+  %div= link_to "Logout", logout_path if logged_in?

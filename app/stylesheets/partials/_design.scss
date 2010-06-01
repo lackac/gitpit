@@ -1,3 +1,6 @@
+@import "colors.scss";
+@import "flash.scss";
+
 body {
   background-color: #eef;
 }
@@ -15,6 +18,12 @@ header {
   h1 {
     line-height: 100px;
     padding-left: 10px;
+
+    a {
+      @include link-colors($logo-color, $logo-color, $logo-color, $logo-color, $logo-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Gitpit
+    %title GitPit
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if lt IE 8]
@@ -11,7 +11,7 @@
   %body
     .container
       %header
-        %h1= link_to "Gitpit", "/"
+        %h1= link_to "GitPit", "/"
         = user_panel
       %nav
         %ul
@@ -21,4 +21,4 @@
         = yield
       %aside
         = yield :aside
-      %footer Copyright &copy; 2010, Gitpit
+      %footer Copyright &copy; 2010, GitPit

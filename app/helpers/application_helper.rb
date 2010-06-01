@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def user_greeting
-    "Welcome, #{user_handle || 'guest'}"
+    "Welcome, #{user_handle || 'Guest'}!"
   end
 
   def logged_in?

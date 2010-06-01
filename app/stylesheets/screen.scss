@@ -42,5 +42,15 @@ aside {
   @include column($sidebar-columns, true);
 }
 
+header {
+  position: relative;
+  #user-panel {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-align: right;
+  }
+}
+
 // Some basic design for a quick start
 @import "partials/design";
