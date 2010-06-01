@@ -31,7 +31,7 @@ module GitPit
     end
 
     def redirect
-      flash[:alert] = "Login failed." unless flash[:notice]
+      flash[:alert] = unauthenticated_message unless flash[:notice]
       redirect_to "/login"
     end
 
@@ -47,6 +47,14 @@ module GitPit
 
     def attempted_path
       warden_options[:attempted_path]
+    end
+
+    def unauthenticated_message
+      if params[:username] && params[:password]
+        "Login failed"
+      else
+        "You need to be logged in to access that page."
+      end
     end
 
   end
