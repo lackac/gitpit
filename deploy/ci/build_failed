@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo "START: Build failed"
-echo "END: Build failed"
+# HOOK: BUILD FAILED
+# This hook runs each time CI Joe finished a build, and the build fails.

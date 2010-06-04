@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
+# HOOK: BEFORE BUILD
+# This hook runs each time CI Joe is initiating a build, after git reset.
 
-echo "START: Before build"
+# Symlinking project specific database.yml
+ln -s ../../database.yml config/database.yml
 
-echo "Symlinking database.yml ..."
-ln -s ../../database.yml ../../config/database.yml
+# Bootstrap the test DB
+RAILS_ENV=test rake db:create
 
-echo "Bootstrapping TEST database ..."
-cd ../..
+# Temporary solution since, we don't have a schema.rb commited
 RAILS_ENV=test rake db:migrate
 
-echo "END: Before build"
+# Perpare db changes in test environment
+RAILS_ENV=test rake db:test:prepare

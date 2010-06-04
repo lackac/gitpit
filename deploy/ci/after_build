@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
-echo "START: After build"
-echo "END: After build"
+# HOOK: AFTER BUILD
+# This hook runs each time CI Joe finished a build process.
+
+# Run metrics and coverage
+RAILS_ENV=test rake metrics:all
+RAILS_ENV=test rake rcov:all
+
+# Package up coverage and metrics data and push it to live
+# TODO

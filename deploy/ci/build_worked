@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo "START: Build worked"
-echo "END: Build worked"
+# HOOK: BUILD WORKED
+# This hook runs each time CI Joe finished a build, and the build works.
