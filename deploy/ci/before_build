@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
+
 echo "START: Before build"
+
+echo "Symlinking database.yml ..."
+ln -s ../../database.yml ../../config/database.yml
+
+echo "Bootstrapping TEST database ..."
+cd ../..
+RAILS_ENV=test rake db:migrate
+
 echo "END: Before build"
