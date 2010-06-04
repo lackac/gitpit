@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "START: After build"
+echo "END: After build"

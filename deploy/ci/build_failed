@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "START: Build failed"
+echo "END: Build failed"

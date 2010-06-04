@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "START: Build worked"
+echo "END: Build worked"
